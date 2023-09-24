@@ -18,7 +18,7 @@ jobs:
         wget "https://chromedriver.storage.googleapis.com/100.0.4896.20/chromedriver_linux64.zip"
         unzip chromedriver_linux64.zip
         chmod +x chromedriver
-        sudo mv chromedriver /usr/local/bin/
+        sudo mv chromedriver /opt/google/chrome/google-chrome
 
     - name: Set up Java
       uses: actions/setup-java@v2
