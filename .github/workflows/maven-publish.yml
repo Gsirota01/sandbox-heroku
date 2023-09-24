@@ -20,7 +20,7 @@ jobs:
         distribution: 'temurin'
    
     - name: Adjust cucumber settings
-      run: cat ${secrets.CUCUMBER_SETTINGS} >> src/test/resources/cucumber.properties
+      run: echo "${{ secrets.CUCUMBER_SETTINGS }}" >> src/test/resources/cucumber.properties
         
     - name: Build with Maven
       run: mvn clean test
