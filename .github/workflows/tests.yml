@@ -15,10 +15,7 @@ jobs:
       uses: actions/checkout@v2
     - name: Set Up Chrome
       run: |
-        CHROME_VERSION=$(google-chrome --version | awk '{print $3}' | cut -d'.' -f1)
-        CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION")
-
-        wget "https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip"
+        wget "https://chromedriver.storage.googleapis.com/100.0.4896.20/chromedriver_linux64.zip"
         unzip chromedriver_linux64.zip
         chmod +x chromedriver
         sudo mv chromedriver /usr/local/bin/
