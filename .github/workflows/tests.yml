@@ -10,8 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Code
+    
+    - name: Checkout Code 
       uses: actions/checkout@v2
+    - name: Set Up Chrome
+      uses: browser-actions/setup-chrome@v1
 
     - name: Set up Java
       uses: actions/setup-java@v2
@@ -19,7 +22,7 @@ jobs:
         java-version: 17
         distribution: 'temurin'
    
-    - name: Adjust cucumber settings
+    - name: Set up cucumber
       run: echo "${{ secrets.CUCUMBER_SETTINGS }}" >> src/test/resources/cucumber.properties
         
     - name: Build with Maven
