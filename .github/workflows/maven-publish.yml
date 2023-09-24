@@ -1,0 +1,26 @@
+name: Maven Tests
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+
+    - name: Set up Java
+      uses: actions/setup-java@v2
+      with:
+        java-version: 1.8
+        distribution: 'temurin'
+   
+    - name: Adjust cucumber settings
+      run: cat ${secrets.CUCUMBER_SETTINGS} > src/test/resources/cucumber.properties
+        
+    - name: Build with Maven
+      run: mvn clean test
