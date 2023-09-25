@@ -13,16 +13,6 @@ jobs:
     
     - name: Checkout Code 
       uses: actions/checkout@v2
-    - name: Set Up Chrome
-      run: |
-        wget "https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/117.0.5938.92/linux64/chromedriver-linux64.zip"
-        unzip chromedriver-linux64.zip
-        ls -la
-        sudo rm /usr/bin/chromedriver
-        sudo mv chromedriver-linux64 chromedriver
-        chmod +x chromedriver
-        sudo mv chromedriver /usr/bin/chromedriver
-
     - name: Set up Java
       uses: actions/setup-java@v2
       with:
