@@ -18,11 +18,7 @@ jobs:
         wget "https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/117.0.5938.92/linux64/chromedriver-linux64.zip"
         unzip chromedriver-linux64.zip
         ls -la
-        echo "dir chromedriver:::before\n"
-        ls /usr/bin/chromedriver
         sudo rm /usr/bin/chromedriver
-        echo "dir chromedriver:::after\n"
-        ls /usr/bin/chromedriver
         sudo mv chromedriver-linux64 chromedriver
         chmod +x chromedriver
         sudo mv chromedriver /usr/bin/chromedriver
