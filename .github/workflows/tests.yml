@@ -23,6 +23,7 @@ jobs:
       run: echo "${{ secrets.CUCUMBER_SETTINGS }}" >> src/test/resources/cucumber.properties
     - name: Set Up Chrome
       run: |
+       sudo apt-get install -y google-chrome-stable
        wget "https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/117.0.5938.92/linux64/chromedriver-linux64.zip"
        unzip chromedriver-linux64.zip
        ls -la
