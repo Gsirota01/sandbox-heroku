@@ -15,8 +15,7 @@ jobs:
       uses: actions/checkout@v2
     - name: Set Up Chrome
       run: |
-        sudo rm /usr/bin/chromedriver
-        wget "https://chromedriver.storage.googleapis.com/114.0.5735.90/chromedriver_linux64.zip"
+        wget "https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/117.0.5938.92/linux64/chromedriver-linux64.zip"
         unzip chromedriver_linux64.zip
         chmod +x chromedriver
         sudo mv chromedriver /usr/bin/chromedriver
