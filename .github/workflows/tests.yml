@@ -28,7 +28,7 @@ jobs:
        ls -la
        sudo rm /usr/bin/chromedriver
        sudo mv chromedriver-linux64 google-chrome
-       chmod +x chromedriver
+       chmod +x google-chrome
        sudo mv google-chrome /usr/bin/google-chrome
     - name: Build with Maven
       run: mvn clean test
