@@ -17,8 +17,9 @@ jobs:
       run: |
         wget "https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/117.0.5938.92/linux64/chromedriver-linux64.zip"
         unzip chromedriver-linux64.zip
-        chmod +x chromedriver
-        sudo mv chromedriver /usr/bin/chromedriver
+        ls -la
+        chmod +x chromedriver-linux64/chromedriver
+        sudo mv chromedriver-linux64/chromedriver /usr/bin/chromedriver
 
     - name: Set up Java
       uses: actions/setup-java@v2
