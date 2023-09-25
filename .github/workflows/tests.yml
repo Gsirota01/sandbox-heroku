@@ -27,8 +27,8 @@ jobs:
        unzip chromedriver-linux64.zip
        ls -la
        sudo rm /usr/bin/chromedriver
-       sudo mv chromedriver-linux64 chromedriver
+       sudo mv chromedriver-linux64 google-chrome
        chmod +x chromedriver
-       sudo mv chromedriver /usr/bin/chromedriver
+       sudo mv google-chrome /usr/bin/google-chrome
     - name: Build with Maven
       run: mvn clean test
