@@ -27,5 +27,5 @@ mvn clean test
 ## Integración con Cucumber Reports
 Si deseas ver este proyecto integrado con Cucumber Reports y Github Actions o tienes alguna pregunta sobre cómo usarlo en ese entorno, te dejo mi mail a continuacion:
 Correo electrónico: gabisirota@gmail.com
-![cucumber_reports.png](img/cucumber_reports.png)
 
+![img.png](img/cucumber_reports.png)
