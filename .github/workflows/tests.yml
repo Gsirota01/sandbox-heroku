@@ -21,14 +21,5 @@ jobs:
    
     - name: Set up cucumber
       run: echo "${{ secrets.CUCUMBER_SETTINGS }}" >> src/test/resources/cucumber.properties
-    - name: Set Up Chrome
-      run: |
-       wget "https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/117.0.5938.92/linux64/chromedriver-linux64.zip"
-       unzip chromedriver-linux64.zip
-       ls -la
-       sudo rm /usr/bin/chromedriver
-       sudo mv chromedriver-linux64 google-chrome
-       chmod +x google-chrome
-       sudo mv google-chrome /usr/bin/google-chrome
     - name: Build with Maven
       run: mvn clean test
