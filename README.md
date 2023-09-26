@@ -9,7 +9,7 @@ Para probar este proyecto en tu entorno local, sigue estos pasos:
 1. Clonar el repositorio a tu máquina local:
 
 ```bash
-git clone https://github.com/Gsirota01/selenium-prac.git
+git clone https://github.com/Gsirota01/selenium-port.git
 ```
 2. Instalar maven
     https://maven.apache.org/install.html
