@@ -15,7 +15,7 @@ public class HerokuCheckboxActions {
         ElementsCollection checkboxes = $$x("//input[@type='checkbox']");
 
         for(SelenideElement checkbox : checkboxes){
-            if(checkbox.getAttribute("checked") == null){
+            if(checkbox.attr("checked") == null){
                 checkbox.click();
             }
         }
@@ -26,7 +26,7 @@ public class HerokuCheckboxActions {
         ElementsCollection checkboxes = $$x("//input[@type='checkbox']");
 
         for(SelenideElement checkbox : checkboxes){
-            checkbox.getAttribute("checked").equals("true");
+            checkbox.attr("checked").equals("true");
         }
 
         closeWebDriver();

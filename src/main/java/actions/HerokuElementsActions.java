@@ -6,13 +6,10 @@ import com.codeborne.selenide.SelenideElement;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.NoSuchElementException;
 
 import java.util.ArrayList;
 
 import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
-import static org.openqa.selenium.By.xpath;
 
 public class HerokuElementsActions {
 
@@ -23,7 +20,8 @@ public class HerokuElementsActions {
 
     @Then("verify that the new element is present")
     public void checkIfTheNewElementIsPresent() {
-        $x("//button[@class='added-manually']").shouldBe(Condition.visible);
+        $x("//button[@class='added-manually']")
+                .shouldBe(Condition.visible);
     }
 
     @And("remove the added element")
@@ -33,7 +31,8 @@ public class HerokuElementsActions {
 
     @Then("verify that the element disappears")
     public void checkIfTheElementDisappear() {
-        $x("//button[@class='added-manually']").shouldBe(Condition.disappear);
+        $x("//button[@class='added-manually']")
+                .shouldBe(Condition.disappear);
         closeWebDriver();
     }
 
@@ -43,8 +42,9 @@ public class HerokuElementsActions {
         Integer brokenImagesCounter = 0;
 
         ElementsCollection images = $$x("//div[@id='content']//img");
+
         for (SelenideElement img : images) {
-            String urlImage = img.getAttribute("currentSrc");
+            String urlImage = img.attr("currentSrc");
             urlImages.add(urlImage);
         }
 

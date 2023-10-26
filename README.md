@@ -1,6 +1,6 @@
 # Proyecto de ejemplo Selenide + Cucumber
 
-Pruebas sobre la sandbox de automatizacion del sitio de Heroku
+Este proyecto contiene algunas pruebas sobre la sandbox de automatizacion del sitio de Heroku
 
 ## Cómo probar localmente
 

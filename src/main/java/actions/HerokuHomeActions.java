@@ -2,6 +2,7 @@ package actions;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
+import io.cucumber.java.BeforeAll;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -11,15 +12,19 @@ import org.testng.Assert;
 import static com.codeborne.selenide.Selenide.*;
 
 public class HerokuHomeActions {
+
+    @BeforeAll
+    public static void setup() {
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments( "--disable-gpu", "--window-size=1920,1200","--ignore-certificate-errors","--disable-extensions","--no-sandbox","--disable-dev-shm-usage");
+        Configuration.browserCapabilities.setCapability(ChromeOptions.CAPABILITY, options);
+    }
     @Given("that the Heroku App site is open")
     public void visitHerokuSite() {
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200","--ignore-certificate-errors","--disable-extensions","--no-sandbox","--disable-dev-shm-usage");
-        Configuration.browserCapabilities.setCapability(ChromeOptions.CAPABILITY, options);
         open("https://the-internet.herokuapp.com/");
     }
 
-    @And("I access the {string} test")
+    @And("access the {string} test")
     public void navigateToTest(String nameTest){
         $x("//a[text()='"+nameTest+"']").click();
     }
