@@ -23,4 +23,7 @@ jobs:
     - name: Set up cucumber
       run: echo "${{ secrets.CUCUMBER_SETTINGS }}" >> src/test/resources/cucumber.properties
     - name: Build with Maven
-      run: mvn clean test
+      run: |
+          echo "${{secrets.ENVIRONMENT_VARIABLES}}" >> conf/dexManager.properties
+          mvn clean test
+          
